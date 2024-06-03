@@ -1,0 +1,21 @@
+{
+  "name": "igniting",
+  "version": "1.0.0",
+  "description": "learning react",
+  "main": "ep2.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/justSWAYAM/Namaste-react.git"
+  },
+  "keywords": [],
+  "author": "swayam mishra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/justSWAYAM/Namaste-react/issues"
+  },
+  "homepage": "https://github.com/justSWAYAM/Namaste-react#readme"
+}
+
