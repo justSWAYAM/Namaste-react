@@ -1,0 +1,56 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+.logo {
+    width: 100px;
+    height: 100px;
+}
+.Nav-list{
+    display: flex;
+    
+}
+.Nav-list >ul {
+  display: flex;
+  list-style-type: none;
+}
+.Nav-list >ul >li {
+    margin: 10px;
+    padding: 10px;
+    
+}
+.Nav-list >ul >li:hover {
+    border: 1px solid black;
+    border-bottom: 5px solid black;
+    cursor: pointer;
+}
+
+.Res-card {
+width: 250px;
+padding: 7px;
+margin: 7px;
+border-radius: 10px;
+
+
+}
+.res-logo {
+    width:100%;
+    border-radius: 10px;
+    height: 200px;
+    background-size: contain;
+
+}
+
+.Res-card:hover {
+cursor: pointer;
+border:1px solid black;
+border-radius: 10px;
+}
+
+.Res-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+    border-radius: 10px;
+}
