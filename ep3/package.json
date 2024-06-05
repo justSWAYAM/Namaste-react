@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "name": "ep3",
+  "version": "1.0.0",
+  "description": "LAying our foundation",
+  "main": "ep3.js",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "scripts": {
+    "test": "jest",
+    "start": "parcel ep3.html",
+    "build": "parcel build ep3.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/justSWAYAM/Namaste-react.git"
+  },
+  "homepage": "https://github.com/justSWAYAM/Namaste-react#readme",
+  "author": "swayam mishra",
+  "license": "ISC"
+}
