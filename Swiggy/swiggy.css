@@ -7,29 +7,23 @@
     width: 100px;
     height: 100px;
 }
-.Nav-list{
-    display: flex;
-    
-}
+
 .Nav-list >ul {
   display: flex;
   list-style-type: none;
+
 }
 .Nav-list >ul >li {
     margin: 10px;
     padding: 10px;
     
 }
-.Nav-list >ul >li:hover {
-    border: 1px solid black;
-    border-bottom: 5px solid black;
-    cursor: pointer;
-}
+
 
 .Res-card {
 width: 250px;
-padding: 7px;
-margin: 7px;
+margin: 20px;
+padding: 5px;
 border-radius: 10px;
 
 
@@ -51,10 +45,36 @@ border-radius: 10px;
 .Res-container {
     display: flex;
     flex-wrap: wrap;
-    padding: 5px;
     border-radius: 10px;
 }
 .Filter-btn-Top {
     margin: 10px;
     cursor: pointer;
+}
+.search-container {
+    margin: 5px;
+}
+.search-btn {
+    cursor: pointer;
+}
+.Shimmer-Container {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.Shimmer-card {
+    width: 250px;
+    background-color: #f0f0f0;
+    height: 350px;
+    margin: 24px;
+    border-radius: 10px;
+}
+
+.Nav-list > ul > li > .Login {
+    padding: inherit; /* inherit padding from parent li */
+    margin: inherit; /* inherit margin from parent li */
+}
+.Nav-list {
+    margin: 20px;
 }
