@@ -10,7 +10,7 @@ const Body = () => {
 
     useEffect(() => {
         fetchData();
-    }, []);
+    },[]);
 
     const fetchData = async () => {
         const response = await fetch(
