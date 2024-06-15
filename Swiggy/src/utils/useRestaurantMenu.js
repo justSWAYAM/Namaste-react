@@ -15,7 +15,7 @@ const useRestaurantMenu = (resId) => {
         setResInfo(json.data);
 };
 
-return resInfo;
+return resInfo; 
 };
 
 export default useRestaurantMenu;
