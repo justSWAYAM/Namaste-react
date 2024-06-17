@@ -1,7 +1,7 @@
 
 import Shimmer from "./Shimmer.js";
 import {useParams} from "react-router-dom";
-import useRestaurantMenu from "../utils/useRestaurantmenu.js";
+import useRestaurantMenu from "../utils/useRestaurantMenu.js";
 const RestaurantMenu = () => {
     const {resId} = useParams();
 

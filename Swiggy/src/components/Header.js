@@ -7,31 +7,33 @@ const Header =() =>{
   const OnlineStatus = useOnlineStatus();
   const [btnName , setbtnName] = useState("Login");
     return (
-    <div className="header">        
+    <div className="flex justify-between shadow-lg border border-solid border-black rounded-2xl">        
 
     <div className="logo-Container">
    <img 
-   className="logo"
-   src= {LOGO_URL}/>
+   className="w-[115px]"src= {LOGO_URL}/>
             
     </div>
              
-    <div className="Nav-list">
-      <ul>
-      <li> OnlineStatus : {OnlineStatus ? "🟢" : "🔴"}</li>
-     <li> <Link to ="/">Home</Link></li>
-     <li> <Link to ="/about">About </Link></li>
-    <li> <Link to ="/contact">Contact </Link></li>
-    <li> <Link to = "/grocery">Grocery</Link></li>
+    <div className="flex items-center ">
+      <ul className="flex p-5 m-5">
+      <li className="px-5"> OnlineStatus : {OnlineStatus ? "🟢" : "🔴"}</li>
+     <li className="px-5"> <Link to ="/">Home</Link></li>
+     <li className="px-5"> <Link to ="/about">About </Link></li>
+    <li className="px-5"> <Link to ="/contact">Contact </Link></li>
+    <li className="px-5"> <Link to = "/grocery">Grocery</Link></li>
     
-    <li>Cart</li>
-
-    <button className="Login" 
+    <li className="px-5">Cart</li>
+    <li  className="px-5 flex items-center ">
+     <div className=" bg-orange-300 flex items-center justify-center h-full">
+    <button className="Login shadow-xl px-4 py-2   " 
     onClick={ () =>{
     btnName === "Login" ? setbtnName ("Logout") : setbtnName ("Login");
     }}
      > {btnName}
-      </button>     
+      </button>
+      </div>  
+      </li>   
       </ul>
      </div>
   </div>

@@ -3,26 +3,10 @@ import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer.js";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus.js";
+import useListRestaurants from "../utils/useListRestaurants.js";
 
 const Body = () => {
-    const [restaurantList, setRestaurantList] = useState([]);
-    const [searchText, setSearchText] = useState("");
-    const [filteredResList, setFilteredResList] = useState([]);
-
-    useEffect(() => {
-        fetchData();
-    },[]);
-
-    const fetchData = async () => {
-        const response = await fetch(
-           "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.07480&lng=72.88560&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-        );
-        const json = await response.json();
-        console.log(json);
-
-        setRestaurantList(json.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setFilteredResList(json.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    };
+    const  {restaurantList ,filteredResList,setFilteredResList ,searchText ,setSearchText} = useListRestaurants();
 
     const onlineStatus = useOnlineStatus();
 
@@ -38,16 +22,17 @@ const Body = () => {
 
     return (
         <div className="body">
-        <div className="filter-search">
-        <div className="search-container">
+        <div className="filter-search m-5 flex">
+        <div className="m-4 p-4">
         <input
-        className="search-bar"
+        className=" shadow-xl" 
         type="text"
         placeholder="Search for Restaurant"
         value={searchText}
         onChange={(e) => setSearchText(e.target.value)}
     />
-        <button className="search-btn" onClick={() => {
+        <button className="px-0.5 py-0.5 bg-gray-200 ml-4 rounded-lg" 
+        onClick={() => {
         const filteredResList = restaurantList.filter(res => 
         res.info.name.toLowerCase().includes(searchText.toLowerCase()));
 
@@ -57,9 +42,9 @@ const Body = () => {
         </button>
     </div>
 
-                <div className="filter">
+                <div className="filter p-7">
                  <button
-                 className="Filter-btn-Top"
+                 className="Filter-btn-Top px-4 py-1 bg-gray-200 rounded-lg"
                 onClick={() => {
                 const filteredList = restaurantList.filter(restaurant => restaurant.info.avgRating > 4.2);
                 setFilteredResList(filteredList);
@@ -70,7 +55,7 @@ const Body = () => {
             </div>
             </div>
 
-            <div className="Res-container">
+            <div className="Res-container flex flex-wrap">
                 {filteredResList.map(restaurant => (
                   <Link key = {restaurant.info.id} to = {"/restaurants/"+restaurant.info.id}>  <RestaurantCard resData={restaurant}/></Link>
                 ))}

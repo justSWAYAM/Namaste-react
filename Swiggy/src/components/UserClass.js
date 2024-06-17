@@ -27,13 +27,14 @@ class UserClass extends React.Component {
 
         return (
             <div className="user-info">
-            <div className="user-card-class">
-               <h1>Name : {name}</h1>  
-               <h3>Login :{login}</h3>
-               <div className="github-profile-container">
-               <img  className = "github-profile" src={avatar_url} alt="avatar" />
+                <div className="flex justify-center">
+            <div className="user-card-class  justify-center shadow-2xl w-[260px]  text-black text-xl">
+               <h1 className="flex justify-center p-3 m-3 font-bold">Name : {name}</h1>  
+               <h3  className="flex justify-center p-3 m-3 font-bold">Login :{login}</h3>
+               <div className="github-profile-container flex justify-center p-3 m-3">
+               <img  className = "github-profile w-[280px] rounded-xl" src={avatar_url} alt="avatar" />
                </div>
-               
+               </div>
                
             </div>
             </div>
