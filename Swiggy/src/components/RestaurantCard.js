@@ -25,4 +25,14 @@ import { CDN_URL} from "../utils/constants.js";
     );
 };
 
+export const FastDeliveryService = (RestaurantCard) => {
+    return(props) => {
+        return (
+            <div>
+            <label className="absolute bg-green-200 text-black m-2 p-2 ">🚀Delivery</label>
+            <RestaurantCard {...props} />
+          </div>
+        );
+    };
+};
 export default RestaurantCard;
