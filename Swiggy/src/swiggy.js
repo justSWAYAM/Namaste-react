@@ -16,7 +16,6 @@ import Cart from './components/Cart';
 const About = lazy(() => import("./components/About"));
 const Grocery = lazy(() => import("./components/Grocery"));
 
-
  
 const AppLayout = () => {
 
@@ -30,7 +29,7 @@ const AppLayout = () => {
   },[]);
   return (
     <Provider  store={appStore}>
-    <UserContext.Provider value={{loggedInUser : userName ,setuserName}}>
+    <UserContext.Provider value={{loggedInUser : userName , setuserName }}>
     
     <div className="App">
      <Header />
