@@ -1,5 +1,5 @@
-import React , { useContext }from 'react';
-import RestaurantCard from './RestaurantCard.js'; // Assuming RestaurantCard and FastDeliveryService are exported from './RestaurantCard.js'
+import React, { useContext } from 'react';
+import RestaurantCard from './RestaurantCard.js'; 
 import Shimmer from './Shimmer.js';
 import { Link } from 'react-router-dom';
 import useOnlineStatus from '../utils/useOnlineStatus.js';
@@ -11,8 +11,7 @@ const Body = () => {
   const { restaurantList, filteredResList, setFilteredResList, searchText, setSearchText } = useListRestaurants();
   const onlineStatus = useOnlineStatus();
   const RestaurantDelivery = FastDeliveryService(RestaurantCard);
-  
-  const {loggedInUser,setuserName} = useContext(UserContext);
+  const { loggedInUser, setuserName } = useContext(UserContext);
 
   if (!onlineStatus) {
     return <h1>Looks like you are offline!!!</h1>;
@@ -29,12 +28,14 @@ const Body = () => {
           <input
             className="shadow-xl"
             type="text"
+            data-testid="searchInput"
             placeholder="Search for Restaurant"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
           <button
             className="px-0.5 py-0.5 bg-gray-200 ml-4 rounded-lg"
+            aria-label="Search"
             onClick={() => {
               const filteredResList = restaurantList.filter(res =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -56,20 +57,24 @@ const Body = () => {
           >
             Top Rated Restaurants
           </button>
-          <label>  userName </label>
-          <input className="border border-black p-2"
-          value={loggedInUser}
-          onChange={(e) => setuserName(e.target.value)}/>
-         </div>
-
+          <label> userName </label>
+          <input
+            className="border border-black p-2"
+            value={loggedInUser}
+            onChange={(e) => setuserName(e.target.value)}
+          />
+        </div>
       </div>
 
       <div className="Res-container flex flex-wrap">
         {filteredResList.map(restaurant => (
           <Link key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id}>
-          {restaurant.info.sla.deliveryTime <= 30 ? (
-            <RestaurantDelivery resData={restaurant} />) : (<RestaurantCard resData={restaurant} />)}
-        </Link>
+            {restaurant.info.sla.deliveryTime <= 30 ? (
+              <RestaurantDelivery resData={restaurant} />
+            ) : (
+              <RestaurantCard resData={restaurant} />
+            )}
+          </Link>
         ))}
       </div>
     </div>
@@ -77,6 +82,7 @@ const Body = () => {
 };
 
 export default Body;
+
 
 
 

@@ -22,4 +22,14 @@ new file
 
 3. Testing  of application as soon as user lands on the page.
 
- 
+# Setting up testing
+
+1. Install react testing library
+2. installed jest
+3. babel dependencies
+4. config babel.config.js
+5. Config parcelrc to disable babel transpilation
+6. Jest config by (npx jest --init)
+7. jsdom library from react library testing
+
+

@@ -22,7 +22,7 @@ const Header =() =>{
    className="w-[115px]"src= {LOGO_URL}/>
             
     </div>
-             
+    
     <div className="flex items-center ">
       <ul className="flex p-5 m-5">
       <li className="px-5"> OnlineStatus : {OnlineStatus ? "🟢" : "🔴"}</li>

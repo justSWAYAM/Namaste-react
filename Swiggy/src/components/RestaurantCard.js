@@ -6,8 +6,10 @@ import { CDN_URL} from "../utils/constants.js";
     const{cloudinaryImageId,name,avgRating,cuisines,}= resData?.info;
     const{deliveryTime} = resData?.info?.sla;
 
+    console.log(resData);
+
     return (
-        <div className="Res-card m-10 p-10 w-[290px] h-[550px] shadow-2xl hover:bg-gray-100 overflow-hidden">
+        <div data-testid="resCard" className="Res-card m-10 p-10 w-[290px] h-[550px] shadow-2xl hover:bg-gray-100 overflow-hidden">
     <img
     className="res-logo rounded-lg shadow-lg h-[220px] w-[270px]" 
     alt="res-logo"
