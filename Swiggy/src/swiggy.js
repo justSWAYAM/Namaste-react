@@ -2,7 +2,7 @@ import React , {lazy , Suspense, useState , useEffect} from 'react';
 import ReactDOM from 'react-dom/client';
 import Header from "./components/Header.js";
 import Body from "./components/Body.js";
-// import About from './components/About.js';
+// import About from './src/components/About.js';
 import Contact from './components/Contact.js';
 import Error from './components/Error.js';
 import RestaurantMenu from "./components/ResaturantMenu.js";  // Corrected import
@@ -10,11 +10,11 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import UserContext from './utils/UserContext.js';
 import {Provider} from "react-redux";
 import appStore from './utils/appStore.js';
-import Cart from './components/Cart';
+import Cart from './components/Cart.js';
 
 
-const About = lazy(() => import("./components/About"));
-const Grocery = lazy(() => import("./components/Grocery"));
+const About = lazy(() => import("./components/About.js"));
+const Grocery = lazy(() => import("./components/Grocery.js"));
 
  
 const AppLayout = () => {
